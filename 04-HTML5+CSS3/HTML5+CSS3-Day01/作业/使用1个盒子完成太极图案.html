@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: skyblue;
+        }
+        
+        div {
+            position: relative;
+            width: 200px;
+            height: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-left: 200px solid #000;
+            border-radius: 50%;
+            transition: all .6s ease-in-out;
+            -webkit-transition: all .6s ease-in-out;
+            -moz-transition: all .6s ease-in-out;
+            -o-transition: all .6s ease-in-out;
+        }
+        
+        div:hover {
+            transform: rotate(360deg);
+        }
+        
+        div:before,
+        div:after {
+            position: absolute;
+            content: '';
+            width: 50px;
+            height: 50px;
+            border: 75px solid;
+            border-radius: 50%;
+        }
+        
+        div:before {
+            transform: translate(-50%, 0);
+            background-color: #fff;
+            border-color: #000;
+        }
+        
+        div:after {
+            transform: translate(-50%, 100%);
+            -webkit-transform: translate(-50%, 100%);
+            -moz-transform: translate(-50%, 100%);
+            -o-transform: translate(-50%, 100%);
+            -ms-transform: translate(-50%, 100%);
+            background-color: #000;
+            border-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
