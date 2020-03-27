@@ -1,0 +1,42 @@
+body {
+    background: url(../images/bg_81ab3d6.jpg) no-repeat center top;
+}
+
+.play-video {
+    position: absolute;
+    top: 280px;
+    right: 380px;
+    width: 93px;
+    height: 93px;
+    cursor: pointer;
+}
+
+.play-video::before,
+.play-video::after {
+    content: '';
+    position: absolute;
+    background-image: url(../images/index_z_9769688.png);
+    background-repeat: no-repeat;
+}
+
+.play-video::before {
+    width: 100%;
+    height: 100%;
+    background-position: -744px -819px;
+    animation: rotate 2.5s linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.play-video::after {
+    top: 50%;
+    left: 50%;
+    width: 21px;
+    height: 30px;
+    background-position: -2290px -103px;
+    transform: translate(-50%, -50%);
+}
