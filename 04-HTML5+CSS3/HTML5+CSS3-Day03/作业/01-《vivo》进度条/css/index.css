@@ -1,0 +1,58 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: url(../images/vivo-banner-z3ys-bg.jpg) no-repeat 50% 0%/cover;
+}
+
+.progress {
+    position: absolute;
+    width: 92px;
+    bottom: 44px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+li {
+    position: relative;
+    float: left;
+    width: 40px;
+    height: 10px;
+    cursor: pointer;
+}
+
+li:last-child {
+    margin-left: 12px;
+}
+
+li .bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #c2c2c3;
+    -webkit-transition: all .3s .1s ease-out;
+    transition: all .3s .1s ease-out;
+}
+
+li:hover .bar {
+    height: 5px;
+}
+
+li .bar::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: #666;
+    -webkit-transition: all .3s ease-out .1s;
+    transition: all .3s ease-out .1s;
+}
+
+li:hover .bar::after {
+    width: 100%;
+    -webkit-transition: width 5s ease;
+    transition: width 5s ease;
+}

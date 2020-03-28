@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html,
+        body {
+            height: 100%;
+        }
+        
+        .w {
+            position: relative;
+            max-width: 640px;
+            height: 100%;
+            margin: 0 auto;
+            background-color: #f8f8f8;
+        }
+        
+        .container {
+            padding-top: 80px;
+        }
+        
+        .box {
+            float: left;
+            width: 100px;
+            height: 40px;
+            background-color: #f4a460;
+        }
+        
+        .line-wrap {
+            height: 40px;
+            line-height: 40px;
+            margin-left: 100px;
+            font-family: 'Microsoft Yahei';
+            overflow: hidden;
+        }
+        
+        .line {
+            width: 200%;
+            animation: move 4s linear infinite;
+        }
+        
+        @keyframes move {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .text {
+            float: left;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w">
+        <div class="container">
+            <div class="box"></div>
+            <div class="line-wrap">
+                <div class="line">
+                    <div class="text">从前有座山，山里有座庙，庙里有个页面找呀找不到</div>
+                    <div class="text">从前有座山，山里有座庙，庙里有个页面找呀找不到</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
