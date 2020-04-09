@@ -1,0 +1,174 @@
+body {
+    font-family: "Microsoft Yahei", sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+/* header */
+
+header {
+    box-sizing: border-box;
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+}
+
+header .row {
+    line-height: 50px;
+    text-align: center;
+}
+
+header [class^="col-md"] {
+    border-left: 1px solid #ccc;
+}
+
+header [class^="col-md"]:nth-of-type(1) {
+    border-left: 0;
+}
+
+header [class^="col-md"]:last-of-type {
+    padding-right: 3rem;
+}
+
+.btn {
+    padding: 3px 15px;
+}
+
+.btn-danger,
+.btn-danger:hover {
+    background-color: #e92322;
+    border-color: #e92322;
+}
+
+.register,
+.login {
+    cursor: pointer;
+}
+
+
+/* navbar */
+
+.navbar {
+    height: 85px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.navbar .navbar-header {
+    /* height: 85px; */
+}
+
+.navbar .navbar-header .navbar-toggle {
+    margin-top: 23px;
+}
+
+.navbar .navbar-brand {
+    position: relative;
+    width: 180px;
+    height: 80px;
+    line-height: 80px;
+    padding: 0;
+}
+
+.navbar .navbar-brand img {
+    display: inline-block;
+    width: 82%;
+    margin-left: 1.5rem;
+    vertical-align: middle;
+}
+
+.navbar-collapse {
+    background-color: #f8f8f8;
+}
+
+ul.navbar-nav {
+    margin-top: 0;
+}
+
+.navbar-nav li a {
+    box-sizing: content-box;
+    height: 80px;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 80px;
+    font-size: 16px;
+}
+
+.navbar-nav li a:hover,
+.navbar-nav li.active a {
+    background-color: #f8f8f8 !important;
+    border-bottom: 3px solid #e92322;
+}
+
+.navbar-default .navbar-nav li a:hover {
+    color: #777;
+}
+
+@media screen and (max-width: 991px) {
+    .navbar,
+    .navbar .navbar-header {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .navbar .navbar-header {
+        height: 80px;
+    }
+    .navbar .navbar-brand {
+        height: 78px;
+        line-height: 78px;
+    }
+    .navbar .navbar-brand img {
+        margin-left: 1.5rem;
+    }
+    .navbar-collapse {
+        margin-top: -2px;
+        padding-top: 8px;
+        border-bottom: 0;
+    }
+    .navbar-nav li a {
+        height: 70px;
+        line-height: 70px;
+    }
+}
+
+
+/* main */
+
+main {
+    padding: 2rem 3rem 0;
+}
+
+main li {
+    margin-bottom: 1rem;
+}
+
+main li a:hover {
+    color: #e92322;
+}
+
+main li a h4 {
+    margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 767px) {
+    main li {
+        margin-bottom: 3rem;
+    }
+}
