@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        do {
+            var command = prompt('欢迎使用简易计算器:\n1.加法运算:\n2.减法运算:\n3.乘法运算:\n4.除法运算:\n5.退出\n请输入您的选项:');
+            if (1 <= command && command <= 4) {
+                var num1 = parseFloat(prompt('请输入第一个数据:'));
+                var num2 = parseFloat(prompt('请输入第二个数据:'));
+            }
+            switch (command) {
+                case '1':
+                    alert('运算结果是: ' + (num1 + num2));
+                    break;
+                case '2':
+                    alert('运算结果是: ' + (num1 - num2));
+                    break;
+                case '3':
+                    alert('运算结果是: ' + (num1 * num2));
+                    break;
+                case '4':
+                    alert('运算结果是: ' + (num1 / num2));
+                    break;
+            }
+        } while (command != 5);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
