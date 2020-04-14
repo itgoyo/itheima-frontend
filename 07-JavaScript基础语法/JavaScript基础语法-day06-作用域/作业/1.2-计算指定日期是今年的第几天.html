@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getDayNum(date) {
+            date = new Date(date);
+            var currYear = date.getFullYear();
+            var firstDay = +new Date(currYear + '-1-1');
+            date = +date;
+            var result = (date - firstDay) / 1000 / 60 / 60 / 24 + 1;
+            return result;
+        }
+        console.log(getDayNum('2019-1-2'));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

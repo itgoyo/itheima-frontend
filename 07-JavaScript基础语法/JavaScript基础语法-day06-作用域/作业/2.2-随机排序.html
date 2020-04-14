@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = ["鹿晗", "王俊凯", "蔡徐坤", "彭于晏", "周杰伦", "刘德华", "赵本山"];
+        var randomNum = [];
+        for (var i = 0; i < arr.length; i++) {
+            randomNum.push(Math.random());
+        }
+        for (var i = 0; i < randomNum.length - 1; i++) {
+            for (var j = 0; j < randomNum.length - i - 1; j++) {
+                if (randomNum[j] > randomNum[j + 1]) {
+                    var temp = randomNum[j];
+                    var temp2 = arr[j];
+                    randomNum[j] = randomNum[j + 1];
+                    arr[j] = arr[j + 1];
+                    randomNum[j + 1] = temp;
+                    arr[j + 1] = temp2;
+                }
+            }
+        }
+        console.log(arr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function exist(arr, student) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] === student) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        var arr = ["鹿晗", "王俊凯", "蔡徐坤", "彭于晏", "周杰伦", "刘德华", "赵本山"];
+        var randomPicked = [];
+        while (randomPicked.length != 4) {
+            var picked = arr[Math.floor(Math.random() * arr.length)];
+            if (!exist(randomPicked, picked)) {
+                randomPicked.push(picked);
+            }
+        }
+        console.log(randomPicked);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

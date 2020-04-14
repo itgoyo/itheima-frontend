@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function randomHex() {
+            var arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        function randomColor() {
+            var randColor = '#';
+            for (var i = 0; i < 6; i++) {
+                randColor += randomHex();
+            }
+            return randColor;
+        }
+
+        console.log(randomColor());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = 'abaasdffggghhjjkkgfddsssss3444343';
+
+        console.log('str.length: ' + str.length);
+
+        console.log('str.charAt(0): ' + str.charAt(0));
+        console.log('str.charAt(3): ' + str.charAt(3));
+        console.log('str.charAt(5): ' + str.charAt(5));
+        console.log('str.charAt(9): ' + str.charAt(9));
+
+        console.log('i存在: ' + (str.indexOf('i') != -1));
+        console.log('c存在: ' + (str.indexOf('c') != -1));
+        console.log('b存在: ' + (str.indexOf('b') != -1));
+
+        function replace(str, oldChar, newChar) {
+            while (str.indexOf(oldChar) != -1) {
+                str = str.replace(oldChar, newChar);
+            }
+            return str;
+        }
+        console.log('\'g\'替换为\'22\': ' + replace(str, 'g', '22'));
+        console.log('\'ss\'替换为\'b\': ' + replace(str, 'ss', 'b'));
+
+        console.log('取得1-5的字符串: ' + str.substring(1, 5 + 1));
+
+        var count = {};
+        for (var i = 0; i < str.length; i++) {
+            if (count[str[i]]) {
+                count[str[i]]++;
+            } else {
+                count[str[i]] = 1;
+            }
+        }
+        var max = 0;
+        var maxChar;
+        for (let k in count) {
+            if (count[k] > max) {
+                max = count[k];
+                maxChar = k;
+            }
+        }
+        console.log('出现次数最多的字符: ' + maxChar + ', 出现的次数: ' + max);
+
+        for (var i = 0; i < str.length; i++) {
+            console.log('@' + str.charAt(i) + '@');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
