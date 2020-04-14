@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Student(name, id, sex, grade) {
+            this.name = name;
+            this.id = id;
+            this.sex = sex;
+            this.grade = grade;
+            this.sayHi = function() {
+                console.log('你好我是' + this.name);
+            };
+        }
+        var zhangsan = new Student('张三', 12345, '男', '五年级');
+        console.log(zhangsan.name);
+        console.log(zhangsan.id);
+        console.log(zhangsan.sex);
+        console.log(zhangsan.grade);
+        zhangsan.sayHi();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getResult() {
+            function min(arr) {
+                if (arr.length == 0) {
+                    return null;
+                }
+                var min = arr[0];
+                for (var i = 1; i < arr.length; i++) {
+                    if (arr[i] < min) {
+                        min = arr[i];
+                    }
+                }
+                return min;
+            }
+
+            function max(arr) {
+                if (arr.length == 0) {
+                    return null;
+                }
+                var max = arr[0];
+                for (var i = 1; i < arr.length; i++) {
+                    if (arr[i] > max) {
+                        max = arr[i];
+                    }
+                }
+                return max;
+            }
+
+            function sum(arr) {
+                if (arr.length == 0) {
+                    return null;
+                }
+                var sum = 0;
+                for (var i = 0; i < arr.length; i++) {
+                    sum += arr[i];
+                }
+                return sum;
+            }
+
+            function averages(arr) {
+                if (arr.length == 0) {
+                    return null;
+                }
+                return sum(arr) / arr.length;
+            }
+
+            return {
+                sum: sum(arguments),
+                max: max(arguments),
+                min: min(arguments),
+                averages: averages(arguments),
+            }
+        }
+        console.log(getResult(10, 20, 30, 40, 50));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

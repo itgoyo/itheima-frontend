@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num = 1;
+
+        function demo() {
+            console.log(num);
+
+            function demoSon() {
+                console.log(num);
+                num = 3;
+                console.log(num);
+            }
+            var num = 2;
+            demoSon();
+        }
+        demo();
+
+        // 相当于执行了以下操作
+        // var num;
+
+        // function demo() {
+        //     var num;
+
+        //     function demoSon() {
+        //         console.log(num); // 2
+        //         num = 3;          // demo 局部变量 num = 3
+        //         console.log(num); // 3
+        //     }
+        //     console.log(num); // undefined
+
+        //     num = 2;
+        //     demoSon();
+        // }
+        // num = 1;
+
+        // demo();
+        // 结果： 
+        // undefined 
+        // 2 
+        // 3
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
