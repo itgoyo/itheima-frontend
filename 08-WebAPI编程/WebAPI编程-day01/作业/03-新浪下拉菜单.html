@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        dl {
+            float: left;
+            width: 80px;
+            margin: 0 0 0 21px;
+            font-size: 14px;
+        }
+        
+        dt a {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 11px 6px 11px 16px;
+            font-style: italic;
+            background: url(images/icon.png) no-repeat 52px -959px;
+            color: #4C4C4C;
+            text-decoration: none;
+        }
+        
+        .dt-hover {
+            background-color: #ccc;
+            color: #ff8400;
+        }
+        
+        dd {
+            box-sizing: border-box;
+            display: none;
+            width: 100%;
+            margin-left: 0;
+            padding: 8px 6px 8px 16px;
+            border: 1px solid #FECC5B;
+            border-top: 0;
+        }
+        
+        .dd-hover {
+            color: #ff8400;
+            background-color: #fff5da;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <dl>
+            <dt>
+              <a href="javascript:;">微博</a>
+            </dt>
+            <dd>私信</dd>
+            <dd>评论</dd>
+            <dd>@我</dd>
+        </dl>
+    </nav>
+
+    <script>
+        var dl = document.querySelector('dl');
+        var dt = document.querySelector('dt a');
+        var dd = document.querySelectorAll('dd');
+        for (var i = 0; i < dd.length; i++) {
+            dd[i].onmouseover = function() {
+                this.className = 'dd-hover';
+            };
+            dd[i].onmouseout = function() {
+                this.className = '';
+            };
+        }
+        dl.onmouseover = function() {
+            dt.className = 'dt-hover';
+            for (var i = 0; i < dd.length; i++) {
+                dd[i].style.display = 'block';
+            }
+        }
+        dl.onmouseout = function() {
+            dt.className = '';
+            for (var i = 0; i < dd.length; i++) {
+                dd[i].style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

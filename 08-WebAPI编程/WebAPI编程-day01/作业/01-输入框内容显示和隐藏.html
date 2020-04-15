@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            color: #aaa;
+            border: 1px solid #d9d9d9;
+            outline: none;
+        }
+        
+        .focus {
+            color: #888;
+            border-color: #ffd6db;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="login_form" method="post">
+        <input type="text" name="id" id="id" value="邮箱/ID/手机号">
+    </form>
+    <script>
+        var id = document.getElementById('id');
+
+        id.onfocus = function() {
+            this.value = '';
+            this.className = 'focus';
+        };
+        id.onblur = function() {
+            if (this.value == '') {
+                this.value = '邮箱/ID/手机号';
+                this.className = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

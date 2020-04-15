@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ads {
+            position: relative;
+            height: 80px;
+            background: #cd1c1c url(images/luzhou.jpg) no-repeat center center;
+            cursor: pointer;
+        }
+        
+        .ads .close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 18px;
+            height: 20px;
+            background: url(images/close.jpg) no-repeat left center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ads">
+        <div class="close"></div>
+    </div>
+    <script>
+        var ads = document.querySelector('.ads');
+        var closeBtn = document.querySelector('.close');
+        closeBtn.onclick = function() {
+            ads.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
