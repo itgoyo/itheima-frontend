@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 600px;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        thead {
+            background-color: blueviolet;
+        }
+        
+        tbody {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="username">请输入姓名:</label>
+    <input type="text" id="username" name="username">
+    <br>
+    <label for="email">请输入邮箱:</label>
+    <input type="text" id="email" name="email">
+    <br>
+    <button>添加</button>
+    <table border="1" cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>邮箱</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        var username = document.getElementById('username');
+        var email = document.getElementById('email');
+        var btn = document.querySelector('button');
+        var tbody = document.querySelector('tbody');
+        btn.onclick = function() {
+            if (username.value == '' || email.value == '') {
+                alert('请将数据填入完全');
+            } else {
+                var tr = document.createElement('tr');
+                var tdUsername = document.createElement('td');
+                var tdEmail = document.createElement('td');
+                tdUsername.innerHTML = username.value;
+                tdEmail.innerHTML = email.value;
+                tr.appendChild(tdUsername);
+                tr.appendChild(tdEmail);
+                tbody.appendChild(tr);
+            }
+        }
+    </script>
+</body>
+
+</html>
