@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="移动">
+    <div class="box"></div>
+
+    <script>
+        var btn = document.querySelector('input[type="button"]');
+        var box = document.querySelector('.box');
+        btn.addEventListener('click', function() {
+            animate(box, 400);
+        });
+
+        function animate(el, target) {
+            clearInterval(el.timer);
+            el.timer = setInterval(function() {
+                if (el.offsetLeft >= target) {
+                    clearInterval(el.timer);
+                }
+                el.style.left = el.offsetLeft + 1 + 'px';
+            }, 10);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .login-header {
+            font-size: 24px;
+            text-align: center;
+        }
+        
+        .login-bg {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        
+        .login {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 230px;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.6);
+            z-index: 2;
+            user-select: none;
+        }
+        
+        .login-title {
+            position: relative;
+            height: 3rem;
+            line-height: 3rem;
+            font-size: 1rem;
+            text-align: center;
+            cursor: move;
+        }
+        
+        .login-title span {
+            position: absolute;
+            top: -1rem;
+            right: -1rem;
+            width: 2rem;
+            height: 2rem;
+            line-height: 2rem;
+            font-size: 0.7rem;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: -1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .login-input {
+            display: flex;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .login-input label {
+            display: inline-block;
+            width: 20%;
+            height: 1.8rem;
+            line-height: 1.8rem;
+            text-align: right;
+            margin-right: 1rem;
+        }
+        
+        .login-input input {
+            box-sizing: border-box;
+            width: 65%;
+            height: 1.8rem;
+            line-height: 1.8rem;
+            padding: 0 0.5rem;
+            border: 1px solid #ececec;
+            font-size: 0.8rem;
+            outline: none;
+        }
+        
+        .login-input input:focus {
+            border: 1px solid #07f;
+        }
+        
+        .loginBtn {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        
+        #login-button-submit {
+            display: inline-block;
+            width: 50%;
+            height: 2rem;
+            line-height: 2rem;
+            border: 1px solid #ececec;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-header">
+        <a href="javascript:;">点击， 弹出登录框</a>
+    </div>
+    <div class="login-bg"></div>
+    <div class="login">
+        <div class="login-title">
+            登录会员
+            <span>
+              <a href="javascript:;" class="close-login">关闭</a>
+            </span>
+        </div>
+        <div class="login-input">
+            <label for="username">用户名: </label>
+            <input type="text" id="username" name="username" placeholder="请输入用户名">
+        </div>
+        <div class="login-input">
+            <label for="password">登陆密码: </label>
+            <input type="password" id="password" name="password" placeholder="请输入登陆密码">
+        </div>
+        <div class="loginBtn">
+            <a href="javascript:;" id="login-button-submit">登陆会员</a>
+        </div>
+    </div>
+
+    <script>
+        var loginLink = document.querySelector('.login-header a');
+        var loginBg = document.querySelector('.login-bg');
+        var login = document.querySelector('.login');
+        var loginTitle = document.querySelector('.login-title');
+        var closeBtn = document.querySelector('.close-login');
+
+        loginLink.addEventListener('click', function() {
+            loginBg.style.display = 'block';
+            login.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', function() {
+            loginBg.style.display = 'none';
+            login.style.display = 'none';
+        });
+
+        loginTitle.addEventListener('mousedown', function(e) {
+            var x = e.pageX - login.offsetLeft;
+            var y = e.pageY - login.offsetTop;
+
+            document.addEventListener('mousemove', move);
+
+            function move(e) {
+                login.style.left = e.pageX - x + 'px';
+                login.style.top = e.pageY - y + 'px';
+            }
+
+            document.addEventListener('mouseup', function() {
+                document.removeEventListener('mousemove', move);
+            });
+        });
+    </script>
+</body>
+
+</html>

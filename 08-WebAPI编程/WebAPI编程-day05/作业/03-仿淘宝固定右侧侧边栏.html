@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .w {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            height: 150px;
+            margin-top: 10px;
+            background-color: purple;
+        }
+        
+        .banner {
+            height: 250px;
+            margin-top: 10px;
+            background-color: skyblue;
+        }
+        
+        main {
+            height: 1000px;
+            margin-top: 10px;
+            background-color: yellowgreen;
+        }
+        
+        .sidebar {
+            position: absolute;
+            width: 45px;
+            height: 130px;
+            top: 300px;
+            left: 50%;
+            transform: translateX(600px);
+            background-color: pink;
+        }
+        
+        .sidebar .goBack {
+            display: none;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w">
+        <header>头部区域</header>
+        <div class="banner">banner区域</div>
+        <main>主体部分</main>
+        <div class="sidebar">
+            <div class="goBack">返回顶部</div>
+        </div>
+    </div>
+
+    <script>
+        var banner = document.querySelector('.banner');
+        var bannerTop = banner.offsetTop;
+        var main = document.querySelector('main');
+        var mainTop = main.offsetTop;
+        var sidebar = document.querySelector('.sidebar');
+        var goBack = sidebar.querySelector('.goBack');
+        var sidebarTop = sidebar.offsetTop - banner.offsetTop;
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset >= bannerTop) {
+                sidebar.style.position = 'fixed';
+                sidebar.style.top = sidebarTop + 'px';
+            } else {
+                sidebar.style.position = 'absolute';
+                sidebar.style.top = '300px';
+            }
+            if (window.pageYOffset >= mainTop) {
+                goBack.style.display = 'block';
+            } else {
+                goBack.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
