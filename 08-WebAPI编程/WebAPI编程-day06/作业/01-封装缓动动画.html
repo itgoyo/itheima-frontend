@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            margin-top: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <input class="move500" type="button" value="移动500">
+    <input class="move800" type="button" value="移动800">
+    <div class="box"></div>
+
+    <script>
+        var btn1 = document.querySelector('.move500');
+        var btn2 = document.querySelector('.move800');
+        var box = document.querySelector('.box');
+
+        btn1.addEventListener('click', function() {
+            animate(box, 500);
+        });
+        btn2.addEventListener('click', function() {
+            animate(box, 800, function() {
+                box.style.backgroundColor = 'red';
+            });
+        });
+
+        function animate(obj, target, callback) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function() {
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    clearTimeout(obj.timer);
+                    callback && callback();
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 15);
+        }
+    </script>
+</body>
+
+</html>
