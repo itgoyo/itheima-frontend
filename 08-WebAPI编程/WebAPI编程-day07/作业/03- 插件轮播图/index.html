@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <style>
+        .swiper-container {
+            width: 500px;
+            height: 300px;
+        }
+        
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper-container swiper-container-1">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="upload/banner.dpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="upload/banner1.dpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="upload/banner2.dpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="upload/banner3.dpg">
+            </div>
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="swiper-container swiper-container-2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="upload/banner.dpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="upload/banner1.dpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="upload/banner2.dpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="upload/banner3.dpg">
+            </div>
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="swiper-container swiper-container-3">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="upload/banner.dpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="upload/banner1.dpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="upload/banner2.dpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="upload/banner3.dpg">
+            </div>
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="js/swiper.min.js"></script>
+    <script>
+        var swiper1 = new Swiper('.swiper-container-1', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            autoplay: {
+                delay: 1000
+            },
+            loop: true,
+            mousewheel: true,
+            keyboard: true,
+        });
+
+        var swiperContainer1 = document.querySelector('.swiper-container-1');
+        swiperContainer1.addEventListener('mouseenter', function() {
+            swiper1.autoplay.stop();
+        });
+        swiperContainer1.addEventListener('mouseleave', function() {
+            swiper1.autoplay.start();
+        });
+
+        var swiper2 = new Swiper('.swiper-container-2', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            autoplay: {
+                delay: 1000
+            },
+            effect: 'fade',
+            loop: true,
+            mousewheel: true,
+            keyboard: true,
+        });
+
+        var swiperContainer2 = document.querySelector('.swiper-container-2');
+        swiperContainer2.addEventListener('mouseenter', function() {
+            swiper2.autoplay.stop();
+        });
+        swiperContainer2.addEventListener('mouseleave', function() {
+            swiper2.autoplay.start();
+        });
+
+        var swiper3 = new Swiper('.swiper-container-3', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            autoplay: {
+                delay: 1000
+            },
+            effect: 'coverflow',
+            loop: true,
+            mousewheel: true,
+            keyboard: true,
+        });
+
+        var swiperContainer3 = document.querySelector('.swiper-container-3');
+        swiperContainer3.addEventListener('mouseenter', function() {
+            swiper3.autoplay.stop();
+        });
+        swiperContainer3.addEventListener('mouseleave', function() {
+            swiper3.autoplay.start();
+        });
+    </script>
+</body>
+
+</html>
