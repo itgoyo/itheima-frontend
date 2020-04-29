@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .wrap {
+            width: 400px;
+            height: 400px;
+            margin: 100px auto 0;
+        }
+        
+        .wrap h1 {
+            text-align: center;
+        }
+        
+        .wrap div {
+            width: 400px;
+            height: 300px;
+            background: pink;
+            font-size: 30px;
+            text-align: center;
+            line-height: 300px;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function() {
+            var keyCodes = [66, 71, 79, 80, 82, 83, 89];
+            var colors = ['blue', 'green', 'orange', 'purple', 'red', 'skyblue', 'yellow'];
+            $(document).keyup(function(e) {
+                var index = keyCodes.indexOf(e.keyCode);
+                if (index != -1) {
+                    $('#keyCodeSpan').text(e.keyCode);
+                    $('#bgChange').css('background-color', colors[index]);
+                } else {
+                    $('#keyCodeSpan').text('无此键位');
+                    $('#bgChange').css('background-color', '');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <h1>按键改变颜色</h1>
+        <div id="bgChange">
+            keyCode为：
+            <span id="keyCodeSpan"></span>
+        </div>
+    </div>
+
+</body>
+
+</html>

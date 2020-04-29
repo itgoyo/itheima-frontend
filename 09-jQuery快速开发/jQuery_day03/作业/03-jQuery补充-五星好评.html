@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>五角星评分案例</title>
+    <style>
+        body {
+            font-family: "simsun";
+        }
+        
+        .comment {
+            font-size: 40px;
+            color: #ff1100;
+        }
+        
+        .comment li {
+            float: left;
+            cursor: pointer;
+        }
+        
+        ul {
+            list-style: none;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function() {
+            var anchor = -1;
+            $('.comment').on('mouseenter', 'li', function() {
+                $(this).text('★').prevAll().text('★');
+                $(this).nextAll().text('☆');
+            }).on('mouseleave', 'li', function() {
+                if (anchor != -1) {
+                    $('li').eq(anchor).text('★').prevAll().text('★');
+                    $('li').eq(anchor).nextAll().text('☆');
+                } else {
+                    $('li').text('☆');
+                }
+            }).on('click', 'li', function() {
+                anchor = $(this).index();
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <ul class="comment">
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+    </ul>
+
+
+</body>
+
+</html>
