@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 400px;
+            border: 1px solid #000;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        
+        td,
+        th {
+            border: 1px solid #000;
+            text-align: center;
+        }
+        
+        .search {
+            width: 600px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search">
+        按照商品名称查询:
+        <input type="text" class="product">
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>产品名称</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        var arr = [{
+            id: 1,
+            brand: '小米',
+            price: 3999
+        }, {
+            id: 2,
+            brand: 'oppo',
+            price: 999
+        }, {
+            id: 3,
+            brand: '荣耀',
+            price: 1299
+        }, {
+            id: 4,
+            brand: '华为',
+            price: 1999
+        }];
+
+        var tbody = document.querySelector('tbody');
+        var product = document.querySelector('.product');
+
+        function setData(myArr) {
+            tbody.innerHTML = '';
+            myArr.forEach(function(item) {
+                var tr = document.createElement('tr');
+                tr.innerHTML = '<td>' + item.id + '</td><td>' + item.brand + '</td><td>' + item.price + '</td>';
+                tbody.appendChild(tr);
+            });
+        }
+        setData(arr);
+
+        product.addEventListener('input', function() {
+            var str = this.value.trim();
+            var newArr = arr.filter(function(item) {
+                return item.brand.includes(str);
+            });
+            setData(newArr);
+        });
+    </script>
+</body>
+
+</html>

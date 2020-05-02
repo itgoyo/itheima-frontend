@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        var andy = new Person('Andy', 18);
+        console.log(Person.prototype);
+        console.log(andy.__proto__);
+        console.log(Person.prototype == andy.__proto__);
+    </script>
+</body>
+
+</html>
