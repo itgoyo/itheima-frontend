@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn1">按钮20</button>
+    <button id="btn2">按钮40</button>
+    <button id="btn3">按钮60</button>
+    <p>闭包把我搞的</p>
+    <script>
+        var btn1 = document.querySelector('#btn1');
+        var btn2 = document.querySelector('#btn2');
+        var btn3 = document.querySelector('#btn3');
+
+        function setFont(fontSize) {
+            return function() {
+                document.body.style.fontSize = fontSize + 'px';
+            }
+        }
+
+        btn1.onclick = setFont(20);
+        btn2.onclick = setFont(40);
+        btn3.onclick = setFont(60);
+    </script>
+</body>
+
+</html>
